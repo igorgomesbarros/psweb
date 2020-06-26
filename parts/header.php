@@ -19,7 +19,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="index.php">Home <span class="sr-only">(página atual)</span></a>
       </li>
-      <li class="nav-item dropdown">
+      <li class="nav-item dropdown" style="display: <?php echo (isset($_COOKIE["usuarioLogado"]) && isset($_COOKIE["nomeEmpresa"])) ? 'unset': 'none' ?>">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Serviço
         </a>
@@ -30,7 +30,16 @@
       </li>
     </ul>
     <ul class="navbar-nav my-2 my-lg-0">
-        <a class="nav-link" href="login.php">Log-in</a>
+        <?php
+            if(isset($_COOKIE["usuarioLogado"]) && isset($_COOKIE["nomeEmpresa"])){
+               echo '<label> Olá, '.$_COOKIE["usuarioLogado"].' / '.$_COOKIE["nomeEmpresa"] .'</label>';
+                echo '<a class="nav-link" href="login.php">Log-out</a>';
+            }else{
+                 echo '<a class="nav-link" href="login.php">Log-in</a>';
+            }
+        ?>
+        <label></label>
+
     </ul>
   </div>
 </nav>

@@ -4,14 +4,14 @@
         <div class="card card-signin my-5">
           <div class="card-body">
             <h5 class="card-title text-center">Login</h5>
-            <form class="form-signin">
+            <form class="form-signin" method="post" action="login.php">
               <div class="form-label-group">
-                <input type="email" id="email" class="form-control" placeholder="Email address" required autofocus>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required autofocus>
                 <label for="email">E-mail</label>
               </div>
 
               <div class="form-label-group">
-                <input type="password" id="senha" class="form-control" placeholder="Senha" required>
+                <input type="password" id="senha" name="senha"  class="form-control" placeholder="Senha" required>
                 <label for="inputPassword">Senha</label>
               </div>
 

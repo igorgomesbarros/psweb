@@ -40,41 +40,15 @@
                     </tr>
                 </thead>
                 <tbody id="tabelaServico">
+                <?php foreach($servicos as $key=>$value): ?>
                     <tr>
-                        <td>Manutenção</td>
-                        <td>Realizamos manutenções em qualquer tipo de hardweres</td>
-                        <td>R$150,00 / hora trabalhada</td>
-                        <td>HighTech Solution</td>
-                        <td>E-mail: highechsolution@gmail.com<br />Telefone: 31 3333-3333</td>
+                        <td><?php echo $value['tipo'] ?></td>
+                        <td><?php echo $value['descricao'] ?></td>
+                        <td><?php echo $value['preco'] ?></td>
+                        <td><?php echo $value['nome_empresa'] ?></td>
+                        <td>E-mail: <?php echo $value['email_empresa'] ?><br />Telefone: <?php echo $value['telefone_comercial'] ?></td>
                     </tr>
-                    <tr>
-                        <td>Segurança</td>
-                        <td>Realizamos ajustes para aumentar a segurança da sua empresa, seja nos hardweres ou na rede</td>
-                        <td>R$600,00 / hora trabalhada</td>
-                        <td>SecurityTeam</td>
-                        <td>E-mail: securityteam@gmail.com<br />Telefone: 31 1111-1111</td>
-                    </tr>
-                    <tr>
-                        <td>Manutenção</td>
-                        <td>Realizamos manutenções em qualquer tipo de hardweres</td>
-                        <td>R$150,00 / hora trabalhada</td>
-                        <td>HighTech Solution</td>
-                        <td>E-mail: highechsolution@gmail.com<br />Telefone: 31 3333-3333</td>
-                    </tr>
-                    <tr>
-                        <td>Segurança</td>
-                        <td>Realizamos ajustes para aumentar a segurança da sua empresa, seja nos hardweres ou na rede</td>
-                        <td>R$600,00 / hora trabalhada</td>
-                        <td>SecurityTeam</td>
-                        <td>E-mail: securityteam@gmail.com<br />Telefone: 31 1111-1111</td>
-                    </tr>
-                    <tr>
-                        <td>Segurança</td>
-                        <td>Realizamos ajustes para aumentar a segurança da sua empresa, seja nos hardweres ou na rede</td>
-                        <td>R$600,00 / hora trabalhada</td>
-                        <td>SecurityTeam</td>
-                        <td>E-mail: securityteam@gmail.com<br />Telefone: 31 1111-1111</td>
-                    </tr>
+                <?php endforeach; ?>
                 </tbody>
             </table>
             </div>
