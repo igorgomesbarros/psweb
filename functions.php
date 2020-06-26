@@ -1,4 +1,6 @@
 <?php
+
+// CONEXÃO AO BD
 $username="root";
 $password="";
 try {
@@ -9,6 +11,7 @@ try {
     echo 'ERROR: ' . $e->getMessage();
 }
 
+// VERIFICANDO LOGIN
 function login($email, $senha) {
     global $conn;
     $stmt = $conn->prepare('SELECT * FROM prestador WHERE email like :email AND senha = :senha');
@@ -19,6 +22,7 @@ function login($email, $senha) {
     return false;
 }
 
+// CADASTRO DE PRESTADORES
 function cadastrarPrestador($dados) {
     global $conn;
     $stmt = $conn->prepare('INSERT INTO prestador (nome, email, celular, cpf, nome_empresa, email_empresa, telefone_comercial, cnpj, senha) 
@@ -27,6 +31,7 @@ function cadastrarPrestador($dados) {
     $stmt->execute();
 }
 
+// CADASTRO DE SERVIÇOS
 function cadastrarServico($dados) {
     global $conn;
     $stmt = $conn->prepare('INSERT INTO servico (id_prestador, tipo, descricao, preco) 
@@ -35,6 +40,7 @@ function cadastrarServico($dados) {
     $stmt->execute();
 }
 
+// LISTAGEM DE SERVIÇOS
 function buscaServicos() {
     global $conn;
     $stmt = $conn->prepare('SELECT s.*, p.nome_empresa, p.email_empresa, p.telefone_comercial FROM servico s JOIN prestador p on s.id_prestador = p.id_prestador');
